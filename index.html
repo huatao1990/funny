@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <div id="app"></div>
+</body>
+<script>
+    function test(x) {
+       return new Promise(function(resole,reject) {
+            setTimeout(function(){
+            resole(x)
+        },3000)
+        })
+        // return '1'
+    }
+async function asyncFn1(x) {
+　　var t =  test(20)
+var d = test(30)
+return await x+await t+await d
+}
+
+async function asyncFn2(x) {
+　　var t =  await test(20)
+var d = await test(30)
+return x+t+d
+}
+asyncFn2(10).then(v=>{
+    console.log(v,'2')
+})
+asyncFn1(10).then(v=>{
+    console.log(v,'1')
+})
+
+  
+</script>
+</html>
