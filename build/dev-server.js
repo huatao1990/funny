@@ -2,7 +2,7 @@ const webpackDevServer = require('webpack-dev-server')
 const config = require('./webpack.dev.js')
 const webpack = require('webpack')
 const devserver = {
-        contentBase: './dist',
+        contentBase: '../dist',
         compress: true,
         hot: true,
         open:  true,

@@ -4,7 +4,7 @@ const clearWebpackPlugin = require('clean-webpack-plugin')
 const MiniCssExtractPlugin=require('mini-css-extract-plugin')
 
 const vueLoaderPlugin = require('vue-loader/lib/plugin')
- console.log(process.env.NODE_ENV)
+
 module.exports = {
     entry: {
         app:path.join(__dirname,'../src/main.js')
@@ -37,6 +37,7 @@ module.exports = {
             {
                 test: /\.js$/, // js文件后缀
                 include: path.resolve(__dirname,'../src'),
+                exclude: path.resolve(__dirname,'../src/service'),
                 use: {
                     loader: 'babel-loader', //使用babel-loader处理
                     options: {
