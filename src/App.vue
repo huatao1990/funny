@@ -13,7 +13,7 @@ export default {
 <style lang="less">
 #app{
     font-size: 14px;
-    color: black;
+    color: white;
 }
 </style>
 
