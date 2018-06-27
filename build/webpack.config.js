@@ -48,8 +48,16 @@ module.exports = {
             {
                 test:/\.less$/,
                 include: path.resolve(__dirname,'../src'),
-                    use: [ process.env.NODE_ENV=='production'?
+                    use: [ 
+                    process.env.NODE_ENV=='production'?
                     MiniCssExtractPlugin.loader:'vue-style-loader',
+                    {loader: 'px2vw-view-loader',query: {
+                        viewportWidth: 750,
+                        viewportUnit: 'vw',
+                        minPixelValue:1,
+                        decimal:3
+                    }
+                }, 
                     { loader: 'css-loader', options: { importLoaders: 1,modules: true } },
                     {loader:'postcss-loader'},
                     'less-loader'
